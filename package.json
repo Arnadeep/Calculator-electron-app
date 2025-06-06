@@ -1,0 +1,41 @@
+{
+    "name": "Calculator",
+    "version": "1.0.0",
+    "author": "Arnadeep",
+    "description": "An Electron calculator app",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder",
+        "build-win": "electron-builder --win",
+        "dist": "electron-builder --publish=never"
+    },
+    "build": {
+        "appId": "com.yourname.calculator",
+        "productName": "Calculator",
+        "directories": {
+            "output": "dist"
+        },
+        "files": [
+            "main.js",
+            "index.html",
+            "style.css",
+            "script.js",
+            "assets/**/*",
+            "**/*",
+            "!node_modules/**/*"
+        ],
+        "win": {
+            "target": "nsis",
+            "icon": "icon.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        }
+    },
+    "devDependencies": {
+        "electron": "^32.0.0",
+        "electron-builder": "^25.1.8"
+    }
+}
